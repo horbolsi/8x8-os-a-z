@@ -1,0 +1,27 @@
+{
+  "video": "8x8_OS_AZ_Highend.mp4",
+  "duration_sec": 375.2,
+  "languages": [
+    "en",
+    "ar",
+    "fr",
+    "de",
+    "it",
+    "ru",
+    "zh",
+    "es",
+    "hi"
+  ],
+  "subtitles": [
+    "subs_en.srt",
+    "subs_ar.srt",
+    "subs_fr.srt",
+    "subs_de.srt",
+    "subs_it.srt",
+    "subs_ru.srt",
+    "subs_zh.srt",
+    "subs_es.srt",
+    "subs_hi.srt"
+  ],
+  "signature": "FlashTM8 ⚡️🌎🤖 | ©️8x8"
+}

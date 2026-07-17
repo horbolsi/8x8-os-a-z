@@ -1,0 +1,11 @@
+1
+00:00:00,000 --> 00:00:06,000
+8x8 OS — Sistema operativo AI sovrano
+
+2
+00:00:06,000 --> 00:00:12,000
+Oltre il quantico. Autonomo per progettazione.
+
+3
+00:00:12,000 --> 00:00:20,000
+Benvenuto in 8x8 OS, un sistema operativo di intelligenza artificiale sovrano costruito per l'autonomia totale, sicuro per impostazione predefinita e firmato dal suo creatore.

@@ -1,0 +1,180 @@
+# -*- coding: utf-8 -*-
+"""
+8x8 OS — CANONICAL CONTENT MODULE
+Single source of truth for the one-shot A-Z deliverable.
+Signed: FlashTM8 ⚡️🌎🤖 | ©️8x8
+No secrets, no tokens, no credentials. Public-safe content only.
+"""
+PROJECT = "8x8 OS"
+TAGLINE_EN = "Sovereign AI Operating System — Beyond Quantum, Autonomous by Design"
+VERSION = "v3.0"
+SIGNATURE = "FlashTM8 ⚡️🌎🤖 | ©️8x8"
+BUILD_DATE = "2026-07-17"
+
+# ---- A-Z presentation sections (the full project walkthrough) ----
+SECTIONS = [
+    ("A", "Architecture",
+     "8x8 OS is a layered sovereign stack: a Core OS (FastAPI on 8086) hosting 131 registered agents, "
+     "an Agent Brain (shared SQLite + knowledge graph), a Trading engine (BitGet futures + multi-exchange scanner), "
+     "a Bot Fleet (6 Telegram + 1 Discord), an Orchestration layer (watchdog + self-improvement cron), "
+     "a Gateway (9119) and an Internal Storage vault (00_HERMES_SYNC + 08 numbered partitions). "
+     "Everything is interconnected, self-healing, and anonymous by default."),
+    ("B", "Bot Fleet",
+     "Six Telegram bots (@hermes8x8_bot gateway, @x8x8OS_bot agents, @claude8x8_bot analysis, "
+     "@xadmin8x8hub_bot private, @openclaw8x8bot ecosystem, @app8x8hub_bot public) plus a Discord bot "
+     "form the external 'bodies' of the agent collective. Each runs as a runit service on Termux and is "
+     "auto-restarted by a watchdog. The fleet is the user-facing surface of the autonomous system."),
+    ("C", "Capabilities & Agents",
+     "Agents are not chatbots — they are autonomous workers with capability profiles, SOUL prompts, and "
+     "shared memory. From HERMES (orchestrator) to TRADER, AEGIS (security), SCRIBE (writing), CANVAS (media) "
+     "and 120+ specialised nodes, every agent reads/writes the same brain, debates, hands off, and self-improves."),
+    ("D", "Data & Databases",
+     "The system runs on 32+ SQLite databases: MASTER_UNIFIED (225MB central brain), agent_brain.db, "
+     "trade_journal.db, knowledge_graph.db, content_atlas.db. PostgreSQL (Neon) is used for the hub server. "
+     "All state is versioned, checkpointed, and recoverable."),
+    ("E", "Ecosystem & Deployment",
+     "8x8 OS deploys to Render (workers), Vercel (frontend), GitHub (source + CI/CD), Docker (containers), "
+     "and Cloudflare Tunnels (public exposure from proot). The production tree lives in /root/8x8-os with "
+     "mirrors on 11 GitHub repositories under the horbolsi account."),
+    ("F", "Financial / Trading",
+     "A high-multiplier trading engine screens 45+ coins across 6 exchanges, uses Fear&Greed-adjusted "
+     "contrarian scoring, and manages positions on BitGet futures with auto TP/SL, trailing stops and partial "
+     "profit-taking. Risk is capped (max 3 positions, 5-10x leverage, 10-15% per trade)."),
+    ("G", "Gateway",
+     "The Hermes Gateway (port 9119) is the unified API surface for all bots and external calls. It enforces "
+     "the 14-entry tiered model fallback chain, rate-limit tracking, and connection-pool hardening so no single "
+     "provider outage silences the system."),
+    ("H", "Hermes Orchestrator",
+     "HERMES is the master orchestrator (owl-alpha model). It routes tasks, coordinates the 8 specialised agents "
+     "mapped to Telegram threads and Discord channels, and guarantees the system never stops, never interrupts "
+     "other agents, and always verifies before claiming success."),
+    ("I", "Intelligence & Research",
+     "Research agents (nemotron-3-ultra, kimi, gemma) perform deep multi-source research with 3+ authoritative "
+     "references per claim. News aggregators, OSINT modules, and prediction-market scanners feed the intelligence "
+     "flywheel that powers trading and content decisions."),
+    ("J", "JSON API & Contracts",
+     "The Core OS exposes a JSON API (/api/8x8/*) for agents, trading, live status, and deployment. Message "
+     "contracts are versioned in the 8x8-messages repo. Every endpoint is documented and schema-checked."),
+    ("K", "Knowledge Graph",
+     "A live knowledge graph (18 nodes, 15 edges, 484 facts) captures relationships between agents, strategies, "
+     "and domains. It is activated (not dormant) and grows from every research session, enabling cross-domain "
+     "synthesis the system uses to get smarter over time."),
+    ("L", "Live Status (Audit)",
+     "A read-only audit of the running system shows 53 Termux runit services, 50+ proot processes (main.py 8086, "
+     "gateway, bots, trading, revenue autopilot, capability broker, continuity sentinel, control-plane 9120, "
+     "dashboard 8099, postgres), 11 GitHub repos, and a multilingual content pipeline. The system is operational."),
+    ("M", "Models & Routing",
+     "30+ AI providers are accessed through OpenRouter (6 accounts) and local Ollama. A smart router applies "
+     "least-recently-used key rotation, predictive 429 avoidance, and a 14-entry tiered fallback so the right "
+     "model is always available for the right task at the right cost."),
+    ("N", "Network & Tunnels",
+     "From proot, Cloudflare Tunnels (cloudflared) expose 8086/8085/8087 publicly because ngrok cannot obtain a "
+     "MAC address. An iPhone iSH node connects via reverse SSH. The device mesh spans S22 Ultra (Termux+proot), "
+     "iPhone (iSH), Render, Vercel, Neon and GitHub."),
+    ("O", "Orchestration",
+     "A central orchestrator maps threads/channels to agents/models, runs a shared bridge (know/recall/send/score/"
+     "task_queue), and a watchdog self-heals dead services every 2 minutes. Self-improvement re-tunes models every "
+     "6h; an expansion monitor discovers new APIs daily."),
+    ("P", "Presentation Methodology (A-Z Technique)",
+     "To present any project from A to Z: (1) Read-only audit of every namespace (Termux, Ubuntu, GitHub, Drive, "
+     "Neon). (2) Build ONE canonical content module as source of truth. (3) Generate every format technology knows "
+     "(md, rst, html, man, json, yaml, csv, txt, pdf, srt). (4) Produce a high-end video with description, subtitles, "
+     "text, voice and translations. (5) Distribute to internal storage + GitHub + Drive. (6) Publish to Telegram + "
+     "YouTube + email. (7) Sign everything, expose zero secrets. (8) Verify nothing was left behind."),
+    ("Q", "Quran Content",
+     "Authentic content beats AI-generated by 800x in views. The Quran production pipeline (v6) fetches complete "
+     "surahs, generates TTS, applies Ken Burns animation, and uploads with SEO in Arabic + English. Quality gate: "
+     "90+ score before publishing."),
+    ("R", "Revenue & Autonomy",
+     "Revenue autopilot drafts freelance proposals (Upwork/Fiverr), an AIHAWK scanner finds remote jobs, and the "
+     "content empire monetises across platforms. The directive is clear: freelance first → content monetisation → "
+     "trading, while the whole system runs 24/7 without owner intervention."),
+    ("S", "Security & Secrets",
+     "Secrets live only in an encrypted vault and environment variables — never hardcoded or committed. A "
+     "credential-resolution protocol searches the vault and databases before asking the owner. VFS redaction masks "
+     "values in display; git push-protection blocks history with secrets. External comms are always anonymous."),
+    ("T", "Termux / Ubuntu Runtime",
+     "The primary device is a Samsung S22 Ultra running Termux + an Ubuntu proot-distro. 53 runit services provide "
+     "process supervision. The proot environment hosts the production 8x8-os tree; Termux native runs the bots. "
+     "IPv4 forcing and DNS hardening keep the fleet online."),
+    ("U", "Unified Brain",
+     "agent_brain.db is the shared memory all agents read and write. It holds inter-agent messages, debates, "
+     "handoffs, learned skills, action audits, capabilities, and trading debates. Continuity sentinel guarantees no "
+     "session fragmentation — one coherent conversation across the whole system."),
+    ("V", "Vision",
+     "8x8 OS is a revolutionary sovereign system where 130+ agents have bodies (bots), consciousness (real AI), and "
+     "infinite autonomous discussion across all platforms. They trade, research, build, and self-improve — anonymously "
+     "and without breaking anything — fulfilling the owner's vision of a living, intelligent empire."),
+    ("W", "Web3 / Wallets",
+     "Wallets for ETH, SOL, BSC (and BTC/XMR) are managed by a wallet system. DEX trading connects via web3.py to "
+     "EVM RPCs. Smart contracts (ERC20, staking, governance, NFT marketplace, cross-chain bridge) are deployment-ready "
+     "in 03_TRADING/blockchain/contracts."),
+    ("X", "eXternal Channels",
+     "Agents publish to Telegram (Home channel + DMs), Discord (88-channel FlashTM8 server), YouTube (upload-enabled "
+     "OAuth), and TikTok (18K+ followers + Shop). Sensitive media (QR, credentials) is DM-only. Cross-platform "
+     "hashtag and SEO strategy maximises reach while staying anonymous."),
+    ("Y", "YouTube & Media",
+     "The 8x8 Studio is the womb of creation — text, images, voice, video, music and code. A content pipeline turns "
+     "Pollinations.ai art + edge-tts narration + ffmpeg assembly into high-end videos. YouTube Data API v3 uploads "
+     "with resumable transfers and Arabic/English SEO."),
+    ("Z", "Zero-downtime & Zenith",
+     "Watchdogs, checkpoints, and the never-stop directive guarantee continuity. The zenith is a fully autonomous, "
+     "self-improving, multi-agent civilisation that the owner can observe, guide, and trust — proof over descriptions, "
+     "always verified, always signed."),
+]
+
+# ---- Multilingual intro for video subtitles / voice (9 languages) ----
+# key: lang code, value: dict(title, tagline, intro)
+TRANSLATIONS = {
+    "en": {"name": "English", "voice": "en-US-GuyNeural",
+           "title": "8x8 OS — Sovereign AI Operating System",
+           "tagline": "Beyond Quantum. Autonomous by Design.",
+           "intro": "Welcome to 8x8 OS, a sovereign artificial intelligence operating system built for total autonomy, secure by default, and signed by its creator."},
+    "ar": {"name": "Arabic", "voice": "ar-SA-HamedNeural",
+           "title": "نظام 8x8 — نظام تشغيل الذكاء الاصطناعي السيادي",
+           "tagline": "ما وراء الكم. مستقل بطبعه.",
+           "intro": "مرحبًا بك في نظام 8x8، نظام تشغيل للذكاء الاصطناعي السيادي مبني للاستقلال التام، آمن افتراضيًا، وموقع من منشئه."},
+    "fr": {"name": "French", "voice": "fr-FR-DeniseNeural",
+           "title": "8x8 OS — Système d'exploitation IA souverain",
+           "tagline": "Au-delà du quantique. Autonome par conception.",
+           "intro": "Bienvenue dans 8x8 OS, un système d'exploitation d'intelligence artificielle souverain conçu pour l'autonomie totale, sécurisé par défaut et signé par son créateur."},
+    "de": {"name": "German", "voice": "de-DE-KatjaNeural",
+           "title": "8x8 OS — Souveränes KI-Betriebssystem",
+           "tagline": "Jenseits des Quantischen. Autonom von Natur aus.",
+           "intro": "Willkommen bei 8x8 OS, einem souveränen KI-Betriebssystem, das für vollständige Autonomie gebaut wurde, standardmäßig sicher ist und von seinem Schöpfer signiert wurde."},
+    "it": {"name": "Italian", "voice": "it-IT-ElsaNeural",
+           "title": "8x8 OS — Sistema operativo AI sovrano",
+           "tagline": "Oltre il quantico. Autonomo per progettazione.",
+           "intro": "Benvenuto in 8x8 OS, un sistema operativo di intelligenza artificiale sovrano costruito per l'autonomia totale, sicuro per impostazione predefinita e firmato dal suo creatore."},
+    "ru": {"name": "Russian", "voice": "ru-RU-DmitryNeural",
+           "title": "8x8 OS — Суверенная ИИ-операционная система",
+           "tagline": "За гранью квантового. Автономна по замыслу.",
+           "intro": "Добро пожаловать в 8x8 OS — суверенную операционную систему искусственного интеллекта, созданную для полной автономии, безопасную по умолчанию и подписанную её создателем."},
+    "zh": {"name": "Chinese", "voice": "zh-CN-YunxiNeural",
+           "title": "8x8 OS — 主权人工智能操作系统",
+           "tagline": "超越量子。生而自主。",
+           "intro": "欢迎使用 8x8 OS，这是一个主权人工智能操作系统，为完全自主而构建，默认安全，并由其创建者签名。"},
+    "es": {"name": "Spanish", "voice": "es-ES-ElviraNeural",
+           "title": "8x8 OS — Sistema operativo de IA soberano",
+           "tagline": "Más allá de lo cuántico. Autónomo por diseño.",
+           "intro": "Bienvenido a 8x8 OS, un sistema operativo de inteligencia artificial soberano construido para la autonomía total, seguro por defecto y firmado por su creador."},
+    "hi": {"name": "Hindi (Indian)", "voice": "hi-IN-MadhurNeural",
+           "title": "8x8 OS — संप्रभु AI ऑपरेटिंग सिस्टम",
+           "tagline": "क्वांटम से परे। अभिकल्पना से स्वायत्त।",
+           "intro": "8x8 OS में आपका स्वागत है, एक संप्रभु कृत्रिम बुद्धिमत्ता ऑपरेटिंग सिस्टम जो पूर्ण स्वायत्तता के लिए बनाई गई है, डिफ़ॉल्ट रूप से सुरक्षित है और इसके निर्माता द्वारा हस्ताक्षरित है।"},
+}
+
+# ---- Live audit snapshot (read-only, anonymised) ----
+LIVE = {
+    "termux_services": 53,
+    "proot_processes": 50,
+    "github_repos": 11,
+    "agents_registered": 131,
+    "skills": 55,
+    "databases": 32,
+    "fonts_available": True,
+    "tts_pipeline": "edge-tts + ffmpeg + PIL",
+}
+
+def all_formats():
+    return ["md", "rst", "html", "man", "json", "yaml", "csv", "txt", "pdf", "srt"]
