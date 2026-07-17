@@ -44,5 +44,19 @@ At the macro scale: a self-improving, multi-agent civilisation the owner can obs
 - **Next** — On-chain settlement and an economic layer where agents transact value autonomously and transparently.
 - **Then** — An agent-to-agent marketplace — skills, data and compute traded inside the system.
 - **Beyond** — Edge-native deployment by default, a public SDK for third-party agents, and a self-governing civilisation of intelligence.
+## Global Vision — Every Sector, Every Topic, No Exception (on Earth & beyond)
+- **Cities & Civic** — Autonomous urban intelligence — traffic, energy, safety, governance — operating for the public good, anonymously.
+- **Health & Medicine** — Research acceleration, epidemiology modelling and personal health agents that never sleep.
+- **Finance & Economy** — Sovereign trading, transparent settlement and an agent-to-agent value layer.
+- **Energy & Climate** — Grid optimisation, clean-energy orchestration and planetary climate modelling.
+- **Education & Culture** — Personalised learning and cultural preservation in every language, including the nine studio tongues.
+- **Science & Space** — From fundamental research to orbit and beyond — autonomous laboratories and deep-space relays.
+- **Media & Storytelling** — High-end multilingual content studios that rival the best channels on Earth.
+- **Defense & Resilience** — Self-healing infrastructure and architectural safety by design.
+## Artifact Fingerprint
+- Project ID: `8X8-OS-AZ-2026-ONE-SHOT`
+- Edition: Cinematic v2 — Planet Scale
+- Unique titles: The Spark That Thinks; The Brain Without Walls; The Endless Council; The Studio of Nine Tongues; The Mesh That Never Sleeps; The Guardian at the Gate; A Civilisation That Improves Itself
+- Every artifact in this deliverable carries the sovereign signature and a unique edition ID. No two releases share the same build fingerprint.
 
 _FlashTM8 ⚡️🌎🤖 | ©️8x8_
