@@ -33,3 +33,4 @@ See [docs/](docs/) for the full product guide.
 
 _FlashTM8 ⚡️🌎🤖 | ©️8x8_
 Anonymous · Sovereign · Autonomous
+See also: https://github.com/horbolsi/8x8-os-a-z (full A-Z deliverable)
