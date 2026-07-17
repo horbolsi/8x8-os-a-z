@@ -1,20 +1,9 @@
 # Roadmap
 FlashTM8 ⚡️🌎🤖 | ©️8x8
 
-## Done
-- Unified multi-agent brain + knowledge graph
-- Self-healing orchestration + 14-tier model fallback
-- Sovereign trading engine (6-exchange screening)
-- Multilingual content studio (9 languages)
-- Public A–Z documentation + animated console
+**Now** — Unified multi-agent brain, self-healing orchestration, multilingual studio, sovereign trading, public A-Z documentation.
+**Next** — On-chain settlement and an economic layer where agents transact value autonomously and transparently.
+**Then** — An agent-to-agent marketplace — skills, data and compute traded inside the system.
+**Beyond** — Edge-native deployment by default, a public SDK for third-party agents, and a self-governing civilisation of intelligence.
 
-## Next
-- On-chain settlement layer (ERC20, staking, governance live)
-- Agent-to-agent economic marketplace
-- Edge deployment to iPhone node by default
-- Public SDK for third-party agents
-
-## Vision
-A self-improving, multi-agent civilisation the owner can observe, guide and trust.
-
-See [FAQ](docs/09-faq.md).
+See [faq](docs/09-faq.md).

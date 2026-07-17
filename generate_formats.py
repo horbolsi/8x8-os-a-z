@@ -1,222 +1,166 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Generate 8x8 OS A-Z documentation in EVERY common format technology knows.
-Reads content.py (single source of truth). Outputs to ./formats/.
-Signed: FlashTM8 ⚡️🌎🤖 | ©️8x8  — public-safe, zero secrets."""
-import os, json, csv, datetime
-from content import (SECTIONS, TRANSLATIONS, LIVE, SIGNATURE, PROJECT,
-                     VERSION, BUILD_DATE, all_formats)
+"""Generate the full A-Z (micro->macro) project documentation in 9 formats.
+Public-safe. Signed. From content.py (single source)."""
+import os, json, csv, html
+from content import PROJECT, VERSION, SIGNATURE, BUILD_DATE, CHAPTERS, GUIDANCE, ROADMAP, TRANSLATIONS, GLOBAL_VISION, FINGERPRINT
 
-OUT = os.path.join(os.path.dirname(__file__), "formats")
-os.makedirs(OUT, exist_ok=True)
+BASE = os.path.dirname(__file__)
+OUT  = os.path.join(BASE, "formats"); os.makedirs(OUT, exist_ok=True)
 
-def wrap(text, w):
-    out, cur = [], ""
-    for word in text.split():
-        if len(cur) + len(word) + 1 > w:
-            out.append(cur); cur = word
-        else:
-            cur = (cur + " " + word).strip()
-    if cur: out.append(cur)
-    return out
+def az_block_md():
+    s = [f"# {PROJECT} {VERSION} — From Micro to Macro (A→Z)\n*{SIGNATURE}*\n"]
+    s.append("A complete walkthrough of the system, from its smallest unit to the whole civilisation.\n")
+    for n,t,b in CHAPTERS:
+        s.append(f"## {n}. {t}\n{b}\n")
+    s.append("## Guidance\n" + "\n".join(f"- **{h}**: {b}" for h,b in GUIDANCE))
+    s.append("\n## Roadmap\n" + "\n".join(f"- **{h}**: {b}" for h,b in ROADMAP))
+    s.append("\n## Global Vision — Every Sector, Every Topic, No Exception\nOn Earth and beyond:")
+    s.append("\n".join(f"- **{h}**: {b}" for h,b in GLOBAL_VISION))
+    s.append(f"\n\n## Artifact Fingerprint\n- Project ID: `{FINGERPRINT['project_id']}`\n- Edition: {FINGERPRINT['edition']}\n- Unique titles: " + "; ".join(FINGERPRINT['unique_titles']) + f"\n- {FINGERPRINT['fingerprint_note']}")
+    s.append(f"\n\n---\n*{SIGNATURE}*")
+    return "\n".join(s)
 
-# ---------- Markdown ----------
-def gen_md():
-    L = []
-    L.append(f"# {PROJECT} {VERSION} — A→Z Project Documentation\n")
-    L.append(f"> {TRANSLATIONS['en']['tagline']}\n")
-    L.append(f"**Build:** {BUILD_DATE}  |  **Signed:** {SIGNATURE}\n")
-    L.append("---\n")
-    L.append("## Live Audit Snapshot (read-only, anonymised)\n")
-    for k, v in LIVE.items():
-        L.append(f"- **{k.replace('_',' ').title()}**: {v}")
-    L.append("\n---\n")
-    L.append("## A → Z: The Complete Walkthrough\n")
-    for letter, title, body in SECTIONS:
-        L.append(f"### {letter}. {title}\n")
-        L.append(body + "\n")
-    L.append("---\n")
-    L.append("## Supported Formats in this Package\n")
-    L.append(", ".join(all_formats()))
-    L.append("\n")
-    L.append(f"_{SIGNATURE}_\n")
-    p = os.path.join(OUT, "8x8-os-AZ.md"); open(p, "w", encoding="utf-8").write("\n".join(L))
-    return p
+BODY = az_block_md()
 
-# ---------- reStructuredText ----------
-def gen_rst():
-    L = []
-    L.append(f"{PROJECT} {VERSION} — A to Z Documentation")
-    L.append("=" * len(f"{PROJECT} {VERSION} — A to Z Documentation") + "\n")
-    L.append(f".. note:: {TRANSLATIONS['en']['tagline']}\n")
-    L.append(f"   Build: {BUILD_DATE} | Signed: {SIGNATURE}\n")
-    L.append("\nLive Audit Snapshot\n------------------\n")
-    for k, v in LIVE.items():
-        L.append(f"- {k.replace('_',' ').title()}: {v}")
-    L.append("\nA to Z Walkthrough\n-----------------\n")
-    for letter, title, body in SECTIONS:
-        L.append(f"{letter}. {title}\n{'~'* (len(title)+3)}\n")
-        L.append(body + "\n")
-    L.append("\n" + SIGNATURE + "\n")
-    p = os.path.join(OUT, "8x8-os-AZ.rst"); open(p, "w", encoding="utf-8").write("\n".join(L))
-    return p
+# 1 MD
+open(os.path.join(OUT,"8x8-os-AZ.md"),"w",encoding="utf-8").write(BODY)
 
-# ---------- HTML ----------
-def gen_html():
-    rows = "".join(
-        f"<tr><td class='ltr'>{l}</td><td><b>{t}</b></td><td>{b}</td></tr>"
-        for l, t, b in SECTIONS)
-    live = "".join(f"<li><b>{k.replace('_',' ').title()}</b>: {v}</li>" for k, v in LIVE.items())
-    langs = "".join(
-        f"<tr><td>{d['name']}</td><td>{d['title']}</td><td>{d['tagline']}</td></tr>"
-        for code, d in TRANSLATIONS.items())
-    html = f"""<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+# 2 RST
+rst = ["="*60,"8x8 OS — From Micro to Macro (A→Z)","="*60,"",f"**{SIGNATURE}**","",
+       "A complete walkthrough of the system, from its smallest unit to the whole civilisation.","",
+       ".. contents::","",""]
+for n,t,b in CHAPTERS:
+    rst += [f"{n}. {t}","-"*40, b, ""]
+rst += ["Guidance","-"*40]
+rst += [f"{h}\n    {b}" for h,b in GUIDANCE] + [""]
+rst += ["Roadmap","-"*40] + [f"{h}\n    {b}" for h,b in ROADMAP] + [""]
+rst += ["Global Vision — Every Sector, Every Topic, No Exception","-"*40]
+rst += ["On Earth and beyond:"] + [f"{h}\n    {b}" for h,b in GLOBAL_VISION] + [""]
+rst += ["Artifact Fingerprint","-"*40]
+rst += [f"Project ID: {FINGERPRINT['project_id']}", f"Edition: {FINGERPRINT['edition']}",
+        "Unique titles: " + "; ".join(FINGERPRINT['unique_titles']), FINGERPRINT['fingerprint_note']]
+rst += ["", SIGNATURE]
+open(os.path.join(OUT,"8x8-os-AZ.rst"),"w",encoding="utf-8").write("\n".join(rst))
+
+# 3 HTML
+rows = "".join(f"<section class='ch'><h2>{n}. {html.escape(t)}</h2><p>{html.escape(b)}</p></section>" for n,t,b in CHAPTERS)
+grows= "".join(f"<li><b>{html.escape(h)}</b> — {html.escape(b)}</li>" for h,b in GUIDANCE)
+rrows= "".join(f"<li><b>{html.escape(h)}</b> — {html.escape(b)}</li>" for h,b in ROADMAP)
+vrows= "".join(f"<li><b>{html.escape(h)}</b> — {html.escape(b)}</li>" for h,b in GLOBAL_VISION)
+html_doc=f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <title>{PROJECT} {VERSION} — A→Z</title>
-<style>
- body{{font-family:Segoe UI,DejaVu Sans,Arial,sans-serif;margin:0;background:#0a0a14;color:#e8e8ff}}
- header{{padding:40px;text-align:center;background:linear-gradient(135deg,#1a0a2a,#0a1a2a);border-bottom:2px solid #8a4aff}}
- h1{{font-size:2.4em;margin:0;color:#c08aff;text-shadow:0 0 20px #8a4aff}}
- .tag{{color:#7af;letter-spacing:2px}}
- .wrap{{max-width:1000px;margin:auto;padding:24px}}
- table{{width:100%;border-collapse:collapse;margin:18px 0}}
- th,td{{border:1px solid #33335a;padding:10px;text-align:left;vertical-align:top}}
- th{{background:#1a1a2e;color:#c08aff}}
- .ltr{{font-size:1.6em;color:#ff8a4a;font-weight:bold;width:40px}}
- .live{{background:#10101e;padding:18px;border-radius:10px}}
- footer{{text-align:center;padding:30px;color:#888;border-top:1px solid #333}}
-</style></head>
-<body><header><h1>{PROJECT} {VERSION}</h1>
-<div class="tag">{TRANSLATIONS['en']['tagline']}</div>
-<div>Signed: {SIGNATURE}</div></header>
-<div class="wrap">
-<h2>Live Audit Snapshot</h2><div class="live"><ul>{live}</ul></div>
-<h2>A → Z Walkthrough</h2>
-<table><tr><th>#</th><th>Topic</th><th>Description</th></tr>{rows}</table>
-<h2>Multilingual (9 languages)</h2>
-<table><tr><th>Language</th><th>Title</th><th>Tagline</th></tr>{langs}</table>
-<p>Formats in this package: {', '.join(all_formats())}</p>
-</div><footer>{SIGNATURE}</footer></body></html>"""
-    p = os.path.join(OUT, "8x8-os-AZ.html"); open(p, "w", encoding="utf-8").write(html)
-    return p
+<style>body{{background:#0a0a14;color:#e8e8f0;font-family:system-ui;max-width:900px;margin:auto;padding:40px}}
+h1{{color:#c08aff}} .ch{{border-left:3px solid #ff8a4a;padding:8px 18px;margin:14px 0}}
+h2{{color:#b388ff}} a{{color:#4a90ff}} .sign{{color:#ffb450;text-align:center;margin-top:30px}}
+.fp{{background:#12122a;border:1px solid #ff8a4a;padding:14px 18px;border-radius:8px;margin-top:20px}}</style></head>
+<body><h1>{PROJECT} {VERSION} — From Micro to Macro (A→Z)</h1>
+<p class="sign">{SIGNATURE}</p>{rows}
+<h2>Guidance</h2><ul>{grows}</ul><h2>Roadmap</h2><ul>{rrows}</ul>
+<h2>Global Vision — Every Sector, Every Topic, No Exception (on Earth &amp; beyond)</h2><ul>{vrows}</ul>
+<div class="fp"><b>Artifact Fingerprint</b><br>Project ID: {FINGERPRINT['project_id']}<br>Edition: {FINGERPRINT['edition']}<br>
+Unique titles: {html.escape('; '.join(FINGERPRINT['unique_titles']))}<br>{html.escape(FINGERPRINT['fingerprint_note'])}</div>
+<p class="sign">{SIGNATURE}</p></body></html>"""
+open(os.path.join(OUT,"8x8-os-AZ.html"),"w",encoding="utf-8").write(html_doc)
 
-# ---------- man (groff) ----------
-def gen_man():
-    L = [".TH \"8X8OS\" \"1\" \"%s\" \"%s\" \"Sovereign AI OS\"" % (BUILD_DATE, PROJECT),
-         ".SH NAME", f"{PROJECT.lower()} \\- Sovereign AI Operating System ({VERSION})",
-         ".SH SYNOPSIS", f"{PROJECT} is a sovereign, autonomous, multi-agent AI operating system.",
-         ".SH DESCRIPTION"]
-    for letter, title, body in SECTIONS:
-        L.append(f".TP")
-        L.append(f"\\fB{letter}. {title}\\fR")
-        L.append(body)
-    L.append(".SH LIVE STATUS")
-    for k, v in LIVE.items():
-        L.append(f".TP\n\\fB{k.replace('_',' ').title()}\\fR\n{v}")
-    L.append(".SH AUTHOR")
-    L.append(SIGNATURE)
-    L.append(".SH COPYRIGHT")
-    L.append("©️ 8x8 — All rights reserved under the sovereign creator model.")
-    p = os.path.join(OUT, "8x8-os-AZ.1"); open(p, "w", encoding="utf-8").write("\n".join(L) + "\n")
-    return p
+# 4 MAN
+man = [".TH \"8X8-OS-AZ\" \"1\" \"\" \"{PROJECT} {VERSION}\"",".SH NAME",
+       "8x8-os-az \\- from micro to macro reference",".SH DESCRIPTION",
+       f"{PROJECT} {VERSION} — a sovereign, autonomous, multi-agent AI operating system.",
+       "This page walks the system from its smallest unit to the whole civilisation.",""]
+for n,t,b in CHAPTERS:
+    man += [f".SH {n}. {t}", b, ""]
+man += [".SH GUIDANCE"] + [f"{h}: {b}" for h,b in GUIDANCE] + [".SH ROADMAP"] + [f"{h}: {b}" for h,b in ROADMAP]
+man += [".SH GLOBAL VISION","Every sector, every topic, no exception — on Earth and beyond:"]
+man += [f"{h}: {b}" for h,b in GLOBAL_VISION]
+man += [".SH ARTIFACT FINGERPRINT", f"Project ID: {FINGERPRINT['project_id']}",
+        f"Edition: {FINGERPRINT['edition']}", "Unique titles: " + "; ".join(FINGERPRINT['unique_titles']),
+        FINGERPRINT['fingerprint_note']]
+man += ["",".SH SIGNATURE", SIGNATURE]
+open(os.path.join(OUT,"8x8-os-AZ.1"),"w",encoding="utf-8").write("\n".join(man))
 
-# ---------- JSON ----------
-def gen_json():
-    doc = {
-        "project": PROJECT, "version": VERSION, "tagline": TRANSLATIONS['en']['tagline'],
-        "build_date": BUILD_DATE, "signature": SIGNATURE,
-        "live_audit": LIVE,
-        "az_sections": [{"letter": l, "title": t, "body": b} for l, t, b in SECTIONS],
-        "translations": TRANSLATIONS,
-        "formats": all_formats(),
-        "secret_policy": "zero external secret exposure; anonymous by default",
-    }
-    p = os.path.join(OUT, "8x8-os-AZ.json"); open(p, "w", encoding="utf-8").write(json.dumps(doc, ensure_ascii=False, indent=2))
-    return p
+# 5 JSON
+data={"project":PROJECT,"version":VERSION,"signature":SIGNATURE,"build":BUILD_DATE,
+      "chapters":[{"n":n,"title":t,"body":b} for n,t,b in CHAPTERS],
+      "guidance":[{"head":h,"body":b} for h,b in GUIDANCE],
+      "roadmap":[{"phase":h,"body":b} for h,b in ROADMAP],
+      "global_vision":[{"sector":h,"body":b} for h,b in GLOBAL_VISION],
+      "fingerprint":FINGERPRINT,
+      "languages":list(TRANSLATIONS.keys())}
+open(os.path.join(OUT,"8x8-os-AZ.json"),"w",encoding="utf-8").write(json.dumps(data,ensure_ascii=False,indent=2))
 
-# ---------- YAML ----------
-def gen_yaml():
-    def esc(s): return '"' + s.replace('"', "'") + '"'
-    L = [f"project: {esc(PROJECT)}", f"version: {esc(VERSION)}",
-         f"tagline: {esc(TRANSLATIONS['en']['tagline'])}", f"build_date: {esc(BUILD_DATE)}",
-         f"signature: {esc(SIGNATURE)}", "live_audit:",]
-    for k, v in LIVE.items(): L.append(f"  {k}: {v}")
-    L.append("az_sections:")
-    for l, t, b in SECTIONS:
-        L.append(f"  - letter: {l}")
-        L.append(f"    title: {esc(t)}")
-        L.append(f"    body: {esc(b)}")
-    L.append("translations:")
-    for code, d in TRANSLATIONS.items():
-        L.append(f"  {code}:")
-        L.append(f"    name: {esc(d['name'])}")
-        L.append(f"    title: {esc(d['title'])}")
-        L.append(f"    tagline: {esc(d['tagline'])}")
-        L.append(f"    intro: {esc(d['intro'])}")
-    L.append("formats:")
-    for f in all_formats(): L.append(f"  - {f}")
-    p = os.path.join(OUT, "8x8-os-AZ.yaml"); open(p, "w", encoding="utf-8").write("\n".join(L) + "\n")
-    return p
+# 6 YAML
+yaml=[f"project: {PROJECT}","version: {VERSION}","signature: \"{SIGNATURE}\"","build: {BUILD_DATE}","chapters:"]
+for n,t,b in CHAPTERS:
+    yaml += [f"  - n: {n}","    title: \"{t}\"",f"    body: \"{b.replace(chr(34),'')}\""]
+yaml += ["guidance:"] + [f"  - head: \"{h}\"\n    body: \"{b.replace(chr(34),'')}\"" for h,b in GUIDANCE]
+yaml += ["roadmap:"] + [f"  - phase: \"{h}\"\n    body: \"{b.replace(chr(34),'')}\"" for h,b in ROADMAP]
+yaml += ["global_vision:"] + [f"  - sector: \"{h}\"\n    body: \"{b.replace(chr(34),'')}\"" for h,b in GLOBAL_VISION]
+yaml += ["fingerprint:","  project_id: \""+FINGERPRINT['project_id']+"\"","  edition: \""+FINGERPRINT['edition']+"\"",
+         "  unique_titles:","  - "+"\n  - ".join(FINGERPRINT['unique_titles']),"  note: \""+FINGERPRINT['fingerprint_note'].replace(chr(34),'')+"\""]
+open(os.path.join(OUT,"8x8-os-AZ.yaml"),"w",encoding="utf-8").write("\n".join(yaml))
 
-# ---------- CSV ----------
-def gen_csv():
-    p = os.path.join(OUT, "8x8-os-AZ.csv")
-    with open(p, "w", encoding="utf-8", newline="") as fh:
-        w = csv.writer(fh); w.writerow(["Letter", "Topic", "Description"])
-        for l, t, b in SECTIONS: w.writerow([l, t, b])
-    return p
+# 7 CSV
+with open(os.path.join(OUT,"8x8-os-AZ.csv"),"w",encoding="utf-8",newline="") as f:
+    w=csv.writer(f); w.writerow(["type","key","title","body"])
+    for n,t,b in CHAPTERS: w.writerow(["chapter",n,t,b])
+    for h,b in GUIDANCE: w.writerow(["guidance","",h,b])
+    for h,b in ROADMAP: w.writerow(["roadmap",h,"",b])
+    for h,b in GLOBAL_VISION: w.writerow(["global_vision",h,"",b])
+    w.writerow(["fingerprint","project_id","",FINGERPRINT['project_id']])
+    w.writerow(["fingerprint","edition","",FINGERPRINT['edition']])
+    w.writerow(["fingerprint","unique_titles","","; ".join(FINGERPRINT['unique_titles'])])
 
-# ---------- TXT ----------
-def gen_txt():
-    L = [f"{PROJECT} {VERSION} — A TO Z", "="*40,
-         f"Tagline: {TRANSLATIONS['en']['tagline']}",
-         f"Build: {BUILD_DATE}  Signed: {SIGNATURE}", ""]
-    L.append("LIVE AUDIT SNAPSHOT"); L.append("-"*40)
-    for k, v in LIVE.items(): L.append(f"  {k.replace('_',' ').title()}: {v}")
-    L.append(""); L.append("A TO Z WALKTHROUGH"); L.append("-"*40)
-    for l, t, b in SECTIONS:
-        L.append(f"[{l}] {t}"); L.extend("  "+x for x in wrap(b, 72)); L.append("")
-    L.append(SIGNATURE)
-    p = os.path.join(OUT, "8x8-os-AZ.txt"); open(p, "w", encoding="utf-8").write("\n".join(L))
-    return p
+# 8 TXT (plain, signed)
+open(os.path.join(OUT,"8x8-os-AZ.txt"),"w",encoding="utf-8").write(BODY)
 
-# ---------- PDF ----------
-def _pdf_safe(t):
-    # core PDF fonts are latin-1; replace fancy unicode + emoji with ASCII-safe
-    repl = {"—": "-", "→": "->", "⚡": "*", "🌎": "", "🤖": "", "©️": "(c)", "█": "#",
-            "░": ".", "│": "|", "─": "-", "┌": "+", "┐": "+", "└": "+", "┘": "+",
-            "├": "+", "┤": "+", "⠋": "", "⠙": "", "⠹": "", "⠸": "", "⠼": "", "⠴": "",
-            "⠦": "", "⠧": "", "⠇": "", "⠏": ""}
-    for k, v in repl.items(): t = t.replace(k, v)
-    return t.encode("latin-1", "replace").decode("latin-1")
-
-def gen_pdf():
+# 9 PDF (fpdf2, latin-1 safe)
+try:
     from fpdf import FPDF
-    p = os.path.join(OUT, "8x8-os-AZ.pdf")
-    pdf = FPDF(format="A4"); pdf.set_auto_page_break(True, margin=15)
-    pdf.set_margins(12, 12, 12)
-    def mc(h, text, style="", size=10, r=30, g=30, b=40):
-        pdf.set_x(12); pdf.set_font("Helvetica", style, size)
-        pdf.set_text_color(r, g, b); pdf.multi_cell(0, h, _pdf_safe(text))
-    pdf.add_page()
-    mc(10, f"{PROJECT} {VERSION} - A to Z", "B", 20, 120, 60, 200)
-    mc(6, TRANSLATIONS['en']['tagline'], "", 11, 40, 40, 60)
-    mc(6, f"Build: {BUILD_DATE}    Signed: {SIGNATURE}", "", 11, 40, 40, 60)
-    pdf.ln(2)
-    mc(8, "Live Audit Snapshot", "B", 13, 80, 40, 150)
-    for k, v in LIVE.items():
-        mc(5, f"- {k.replace('_',' ').title()}: {v}")
-    pdf.ln(2)
-    for l, t, b in SECTIONS:
-        if pdf.get_y() > 250: pdf.add_page()
-        mc(7, f"{l}. {t}", "B", 12, 200, 80, 40)
-        mc(5, b); pdf.ln(1)
-    pdf.output(p); return p
+    def safe(s):
+        s=s.replace("\u2014","-").replace("\u2013","-").replace("\u2019","'").replace("\u201c",'"').replace("\u201d",'"')
+        return s.encode("latin-1","replace").decode("latin-1")
+    class P(FPDF):
+        def header(self):
+            self.set_font("Helvetica","B",9); self.set_text_color(160,120,255)
+            self.cell(0,6,safe(f"{PROJECT} {VERSION} — A to Z"),0,0,"R"); self.ln(8)
+        def footer(self):
+            self.set_y(-12); self.set_font("Helvetica","I",8); self.set_text_color(255,180,80)
+            self.cell(0,6,safe(SIGNATURE),0,0,"C")
+    p=P(); p.set_margins(15,15,15); p.set_auto_page_break(True,18); p.add_page(); p.set_text_color(20,20,30)
+    p.set_font("Helvetica","B",16); p.set_text_color(160,120,255)
+    p.set_x(15); p.multi_cell(0,8,safe(f"{PROJECT} {VERSION} — From Micro to Macro (A to Z)")); p.ln(2)
+    p.set_text_color(40,40,60)
+    for n,t,b in CHAPTERS:
+        if p.get_y()>255: p.add_page()
+        p.set_x(15); p.set_font("Helvetica","B",12); p.set_text_color(140,90,255); p.multi_cell(0,6,safe(f"{n}. {t}"))
+        p.set_x(15); p.set_font("Helvetica","",10); p.set_text_color(40,40,60); p.multi_cell(0,5,safe(b)); p.ln(1)
+    p.add_page(); p.set_x(15); p.set_font("Helvetica","B",13); p.set_text_color(255,138,74)
+    p.multi_cell(0,6,"Roadmap"); p.set_font("Helvetica","",10)
+    for h,b in ROADMAP:
+        if p.get_y()>255: p.add_page()
+        p.set_x(15); p.multi_cell(0,5,safe(f"- {h}: {b}"))
+    p.ln(1); p.set_x(15); p.set_font("Helvetica","B",13); p.set_text_color(255,138,74)
+    p.multi_cell(0,6,"Global Vision - Every Sector, Every Topic, No Exception (on Earth & beyond)")
+    p.set_font("Helvetica","",10)
+    for h,b in GLOBAL_VISION:
+        if p.get_y()>255: p.add_page()
+        p.set_x(15); p.multi_cell(0,5,safe(f"- {h}: {b}"))
+    p.ln(1); p.set_x(15); p.set_font("Helvetica","B",13); p.set_text_color(255,138,74)
+    p.multi_cell(0,6,"Artifact Fingerprint")
+    p.set_font("Helvetica","",10); p.set_x(15)
+    p.multi_cell(0,5,safe(f"Project ID: {FINGERPRINT['project_id']}"))
+    p.set_x(15); p.multi_cell(0,5,safe(f"Edition: {FINGERPRINT['edition']}"))
+    p.set_x(15); p.multi_cell(0,5,safe("Unique titles: " + "; ".join(FINGERPRINT['unique_titles'])))
+    p.set_x(15); p.multi_cell(0,5,safe(FINGERPRINT['fingerprint_note']))
+    p.ln(1); p.set_x(15); p.set_font("Helvetica","B",13); p.set_text_color(255,138,74)
+    p.multi_cell(0,6,"Roadmap"); p.set_font("Helvetica","",10)
+    for h,b in ROADMAP:
+        if p.get_y()>255: p.add_page()
+        p.set_x(15); p.multi_cell(0,5,safe(f"- {h}: {b}"))
+    p.output(os.path.join(OUT,"8x8-os-AZ.pdf"))
+    print("PDF_OK")
+except Exception as e:
+    print("PDF skip:",repr(e))
 
-if __name__ == "__main__":
-    files = [gen_md(), gen_rst(), gen_html(), gen_man(), gen_json(),
-             gen_yaml(), gen_csv(), gen_txt(), gen_pdf()]
-    print("GENERATED:")
-    for f in files: print("  ", os.path.relpath(f, OUT))
-    print("FORMAT COUNT:", len(files))
+print("FORMATS_DONE:", sorted(os.listdir(OUT)))

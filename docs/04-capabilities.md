@@ -1,28 +1,9 @@
 # Capabilities
 FlashTM8 ⚡️🌎🤖 | ©️8x8
 
-The system exposes capabilities as composable building blocks:
-
-## Perception
-- Multi-source research (3+ authoritative references per claim)
-- News aggregation and sentiment
-- OSINT and market intelligence
-
-## Action
-- Trading (futures, spot, DEX)
-- Content generation (text, image, voice, video, music)
-- Code execution and deployment
-- Cross-platform publishing
-
-## Cognition
-- Shared brain (memory + graph)
-- Model routing with fallback
-- Self-improvement and skill learning
-- Debate and consensus
-
-## Safety
-- Credential resolution (no asking for what exists)
-- Secret sanitisation before any public write
-- Bounded autonomy gates (deploy, trade, publish, paid-model)
+**Perceive** — multi-source research (3+ authoritative references per claim), news, OSINT.
+**Act** — trading, content generation, code, cross-platform publishing.
+**Cognate** — shared brain, model routing, self-improvement, debate & consensus.
+**Safeguard** — credential resolution, secret sanitisation, bounded-autonomy gates.
 
 See [security](docs/05-security.md).

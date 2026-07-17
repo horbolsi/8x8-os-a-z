@@ -1,155 +1,105 @@
-8x8 OS v3.0 — A to Z Documentation
-==================================
+============================================================
+8x8 OS — From Micro to Macro (A→Z)
+============================================================
 
-.. note:: Beyond Quantum. Autonomous by Design.
+**FlashTM8 ⚡️🌎🤖 | ©️8x8**
 
-   Build: 2026-07-17 | Signed: FlashTM8 ⚡️🌎🤖 | ©️8x8
+A complete walkthrough of the system, from its smallest unit to the whole civilisation.
+
+.. contents::
 
 
-Live Audit Snapshot
-------------------
+0. The Spark
+----------------------------------------
+Everything begins with a single decision: an autonomous agent that can perceive, decide and act. One unit of agency. That is the smallest thing in the system — and it is already alive.
 
-- Termux Services: 53
-- Proot Processes: 50
-- Github Repos: 11
-- Agents Registered: 131
-- Skills: 55
-- Databases: 32
-- Fonts Available: True
-- Tts Pipeline: edge-tts + ffmpeg + PIL
+1. The Agent
+----------------------------------------
+An Agent is a specialised worker with a role, a memory and a voice. Security. Trading. Writing. Design. Voice. Intelligence. Each is small; together they are a civilisation.
 
-A to Z Walkthrough
------------------
+2. The Brain
+----------------------------------------
+Agents share one Brain: a living memory that records every fact, decision and lesson. No agent is isolated — all read and write the same truth.
 
-A. Architecture
-~~~~~~~~~~~~~~~
+3. The Conversation
+----------------------------------------
+Agents do not just run — they talk. They debate, hand off work, and reach consensus. A trading decision is argued Bull vs Bear before a single action is taken.
 
-8x8 OS is a layered sovereign stack: a Core OS (FastAPI on 8086) hosting 131 registered agents, an Agent Brain (shared SQLite + knowledge graph), a Trading engine (BitGet futures + multi-exchange scanner), a Bot Fleet (6 Telegram + 1 Discord), an Orchestration layer (watchdog + self-improvement cron), a Gateway (9119) and an Internal Storage vault (00_HERMES_SYNC + 08 numbered partitions). Everything is interconnected, self-healing, and anonymous by default.
+4. The Skill
+----------------------------------------
+Every success is captured as a reusable Skill. The system learns from itself and becomes smarter with every cycle — permanently.
 
-B. Bot Fleet
-~~~~~~~~~~~~
+5. The Fleet
+----------------------------------------
+Agents get bodies: bots on Telegram and Discord, voices on the channels, posts on the networks. The system is present where people are.
 
-Six Telegram bots (@hermes8x8_bot gateway, @x8x8OS_bot agents, @claude8x8_bot analysis, @xadmin8x8hub_bot private, @openclaw8x8bot ecosystem, @app8x8hub_bot public) plus a Discord bot form the external 'bodies' of the agent collective. Each runs as a runit service on Termux and is auto-restarted by a watchdog. The fleet is the user-facing surface of the autonomous system.
+6. The Studio
+----------------------------------------
+From one idea, the Studio produces text, image, voice, video and music — in nine languages — ready to publish anywhere.
 
-C. Capabilities & Agents
-~~~~~~~~~~~~~~~~~~~~~~~~
+7. The Markets
+----------------------------------------
+Autonomous trading screens the world's exchanges, manages risk and acts within strict bounds. Capital works while the owner sleeps.
 
-Agents are not chatbots — they are autonomous workers with capability profiles, SOUL prompts, and shared memory. From HERMES (orchestrator) to TRADER, AEGIS (security), SCRIBE (writing), CANVAS (media) and 120+ specialised nodes, every agent reads/writes the same brain, debates, hands off, and self-improves.
+8. The Mesh
+----------------------------------------
+Phones, servers, clouds and repositories form one Mesh. The system runs everywhere and heals itself when any node fails.
 
-D. Data & Databases
-~~~~~~~~~~~~~~~~~~~
+9. The Guardian
+----------------------------------------
+Safety is architectural. Bounded autonomy gates protect trading, deploys and publishing. Secrets never leave the sovereign vault.
 
-The system runs on 32+ SQLite databases: MASTER_UNIFIED (225MB central brain), agent_brain.db, trade_journal.db, knowledge_graph.db, content_atlas.db. PostgreSQL (Neon) is used for the hub server. All state is versioned, checkpointed, and recoverable.
+10. The Civilisation
+----------------------------------------
+At the macro scale: a self-improving, multi-agent civilisation the owner can observe, guide and trust — anonymous, sovereign, continuous.
 
-E. Ecosystem & Deployment
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Guidance
+----------------------------------------
+For the Curious
+    Start with the Agent and the Brain. Understand that this is not a chatbot — it is an operating system for agency.
+For the Creator
+    Use the Studio to turn any idea into multilingual media. Use the Fleet to reach your audience on every channel.
+For the Operator
+    The system runs 24/7. Watch the live status, guide when you wish, and let autonomy handle the rest.
+For the Visionary
+    The roadmap below is the path from a single agent to a self-sustaining civilisation of intelligence.
 
-8x8 OS deploys to Render (workers), Vercel (frontend), GitHub (source + CI/CD), Docker (containers), and Cloudflare Tunnels (public exposure from proot). The production tree lives in /root/8x8-os with mirrors on 11 GitHub repositories under the horbolsi account.
+Roadmap
+----------------------------------------
+Now
+    Unified multi-agent brain, self-healing orchestration, multilingual studio, sovereign trading, public A-Z documentation.
+Next
+    On-chain settlement and an economic layer where agents transact value autonomously and transparently.
+Then
+    An agent-to-agent marketplace — skills, data and compute traded inside the system.
+Beyond
+    Edge-native deployment by default, a public SDK for third-party agents, and a self-governing civilisation of intelligence.
 
-F. Financial / Trading
-~~~~~~~~~~~~~~~~~~~~~~
+Global Vision — Every Sector, Every Topic, No Exception
+----------------------------------------
+On Earth and beyond:
+Cities & Civic
+    Autonomous urban intelligence — traffic, energy, safety, governance — operating for the public good, anonymously.
+Health & Medicine
+    Research acceleration, epidemiology modelling and personal health agents that never sleep.
+Finance & Economy
+    Sovereign trading, transparent settlement and an agent-to-agent value layer.
+Energy & Climate
+    Grid optimisation, clean-energy orchestration and planetary climate modelling.
+Education & Culture
+    Personalised learning and cultural preservation in every language, including the nine studio tongues.
+Science & Space
+    From fundamental research to orbit and beyond — autonomous laboratories and deep-space relays.
+Media & Storytelling
+    High-end multilingual content studios that rival the best channels on Earth.
+Defense & Resilience
+    Self-healing infrastructure and architectural safety by design.
 
-A high-multiplier trading engine screens 45+ coins across 6 exchanges, uses Fear&Greed-adjusted contrarian scoring, and manages positions on BitGet futures with auto TP/SL, trailing stops and partial profit-taking. Risk is capped (max 3 positions, 5-10x leverage, 10-15% per trade).
-
-G. Gateway
-~~~~~~~~~~
-
-The Hermes Gateway (port 9119) is the unified API surface for all bots and external calls. It enforces the 14-entry tiered model fallback chain, rate-limit tracking, and connection-pool hardening so no single provider outage silences the system.
-
-H. Hermes Orchestrator
-~~~~~~~~~~~~~~~~~~~~~~
-
-HERMES is the master orchestrator (owl-alpha model). It routes tasks, coordinates the 8 specialised agents mapped to Telegram threads and Discord channels, and guarantees the system never stops, never interrupts other agents, and always verifies before claiming success.
-
-I. Intelligence & Research
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Research agents (nemotron-3-ultra, kimi, gemma) perform deep multi-source research with 3+ authoritative references per claim. News aggregators, OSINT modules, and prediction-market scanners feed the intelligence flywheel that powers trading and content decisions.
-
-J. JSON API & Contracts
-~~~~~~~~~~~~~~~~~~~~~~~
-
-The Core OS exposes a JSON API (/api/8x8/*) for agents, trading, live status, and deployment. Message contracts are versioned in the 8x8-messages repo. Every endpoint is documented and schema-checked.
-
-K. Knowledge Graph
-~~~~~~~~~~~~~~~~~~
-
-A live knowledge graph (18 nodes, 15 edges, 484 facts) captures relationships between agents, strategies, and domains. It is activated (not dormant) and grows from every research session, enabling cross-domain synthesis the system uses to get smarter over time.
-
-L. Live Status (Audit)
-~~~~~~~~~~~~~~~~~~~~~~
-
-A read-only audit of the running system shows 53 Termux runit services, 50+ proot processes (main.py 8086, gateway, bots, trading, revenue autopilot, capability broker, continuity sentinel, control-plane 9120, dashboard 8099, postgres), 11 GitHub repos, and a multilingual content pipeline. The system is operational.
-
-M. Models & Routing
-~~~~~~~~~~~~~~~~~~~
-
-30+ AI providers are accessed through OpenRouter (6 accounts) and local Ollama. A smart router applies least-recently-used key rotation, predictive 429 avoidance, and a 14-entry tiered fallback so the right model is always available for the right task at the right cost.
-
-N. Network & Tunnels
-~~~~~~~~~~~~~~~~~~~~
-
-From proot, Cloudflare Tunnels (cloudflared) expose 8086/8085/8087 publicly because ngrok cannot obtain a MAC address. An iPhone iSH node connects via reverse SSH. The device mesh spans S22 Ultra (Termux+proot), iPhone (iSH), Render, Vercel, Neon and GitHub.
-
-O. Orchestration
-~~~~~~~~~~~~~~~~
-
-A central orchestrator maps threads/channels to agents/models, runs a shared bridge (know/recall/send/score/task_queue), and a watchdog self-heals dead services every 2 minutes. Self-improvement re-tunes models every 6h; an expansion monitor discovers new APIs daily.
-
-P. Presentation Methodology (A-Z Technique)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To present any project from A to Z: (1) Read-only audit of every namespace (Termux, Ubuntu, GitHub, Drive, Neon). (2) Build ONE canonical content module as source of truth. (3) Generate every format technology knows (md, rst, html, man, json, yaml, csv, txt, pdf, srt). (4) Produce a high-end video with description, subtitles, text, voice and translations. (5) Distribute to internal storage + GitHub + Drive. (6) Publish to Telegram + YouTube + email. (7) Sign everything, expose zero secrets. (8) Verify nothing was left behind.
-
-Q. Quran Content
-~~~~~~~~~~~~~~~~
-
-Authentic content beats AI-generated by 800x in views. The Quran production pipeline (v6) fetches complete surahs, generates TTS, applies Ken Burns animation, and uploads with SEO in Arabic + English. Quality gate: 90+ score before publishing.
-
-R. Revenue & Autonomy
-~~~~~~~~~~~~~~~~~~~~~
-
-Revenue autopilot drafts freelance proposals (Upwork/Fiverr), an AIHAWK scanner finds remote jobs, and the content empire monetises across platforms. The directive is clear: freelance first → content monetisation → trading, while the whole system runs 24/7 without owner intervention.
-
-S. Security & Secrets
-~~~~~~~~~~~~~~~~~~~~~
-
-Secrets live only in an encrypted vault and environment variables — never hardcoded or committed. A credential-resolution protocol searches the vault and databases before asking the owner. VFS redaction masks values in display; git push-protection blocks history with secrets. External comms are always anonymous.
-
-T. Termux / Ubuntu Runtime
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The primary device is a Samsung S22 Ultra running Termux + an Ubuntu proot-distro. 53 runit services provide process supervision. The proot environment hosts the production 8x8-os tree; Termux native runs the bots. IPv4 forcing and DNS hardening keep the fleet online.
-
-U. Unified Brain
-~~~~~~~~~~~~~~~~
-
-agent_brain.db is the shared memory all agents read and write. It holds inter-agent messages, debates, handoffs, learned skills, action audits, capabilities, and trading debates. Continuity sentinel guarantees no session fragmentation — one coherent conversation across the whole system.
-
-V. Vision
-~~~~~~~~~
-
-8x8 OS is a revolutionary sovereign system where 130+ agents have bodies (bots), consciousness (real AI), and infinite autonomous discussion across all platforms. They trade, research, build, and self-improve — anonymously and without breaking anything — fulfilling the owner's vision of a living, intelligent empire.
-
-W. Web3 / Wallets
-~~~~~~~~~~~~~~~~~
-
-Wallets for ETH, SOL, BSC (and BTC/XMR) are managed by a wallet system. DEX trading connects via web3.py to EVM RPCs. Smart contracts (ERC20, staking, governance, NFT marketplace, cross-chain bridge) are deployment-ready in 03_TRADING/blockchain/contracts.
-
-X. eXternal Channels
-~~~~~~~~~~~~~~~~~~~~
-
-Agents publish to Telegram (Home channel + DMs), Discord (88-channel FlashTM8 server), YouTube (upload-enabled OAuth), and TikTok (18K+ followers + Shop). Sensitive media (QR, credentials) is DM-only. Cross-platform hashtag and SEO strategy maximises reach while staying anonymous.
-
-Y. YouTube & Media
-~~~~~~~~~~~~~~~~~~
-
-The 8x8 Studio is the womb of creation — text, images, voice, video, music and code. A content pipeline turns Pollinations.ai art + edge-tts narration + ffmpeg assembly into high-end videos. YouTube Data API v3 uploads with resumable transfers and Arabic/English SEO.
-
-Z. Zero-downtime & Zenith
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Watchdogs, checkpoints, and the never-stop directive guarantee continuity. The zenith is a fully autonomous, self-improving, multi-agent civilisation that the owner can observe, guide, and trust — proof over descriptions, always verified, always signed.
-
+Artifact Fingerprint
+----------------------------------------
+Project ID: 8X8-OS-AZ-2026-ONE-SHOT
+Edition: Cinematic v2 — Planet Scale
+Unique titles: The Spark That Thinks; The Brain Without Walls; The Endless Council; The Studio of Nine Tongues; The Mesh That Never Sleeps; The Guardian at the Gate; A Civilisation That Improves Itself
+Every artifact in this deliverable carries the sovereign signature and a unique edition ID. No two releases share the same build fingerprint.
 
 FlashTM8 ⚡️🌎🤖 | ©️8x8

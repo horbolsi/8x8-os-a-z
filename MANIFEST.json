@@ -1,5 +1,5 @@
 {
-  "product": "8x8 OS v3.0 (public product documentation)",
+  "product": "8x8 OS 2026 (public product docs, micro->macro)",
   "build": "2026-07-17",
   "signature": "FlashTM8 ⚡️🌎🤖 | ©️8x8",
   "secret_exposure": "ZERO",
@@ -14,33 +14,17 @@
     "es",
     "hi"
   ],
-  "doc_count": 12,
-  "sections": [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "U",
-    "V",
-    "W",
-    "X",
-    "Y",
-    "Z"
+  "chapters": [
+    "The Spark",
+    "The Agent",
+    "The Brain",
+    "The Conversation",
+    "The Skill",
+    "The Fleet",
+    "The Studio",
+    "The Markets",
+    "The Mesh",
+    "The Guardian",
+    "The Civilisation"
   ]
 }
