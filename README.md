@@ -28,3 +28,4 @@ python3 8x8_console.py --demo
 See [docs/](docs/) for the full guide.
 
 _FlashTM8 ⚡️🌎🤖 | ©️8x8_  ·  Anonymous · Sovereign · Autonomous
+See also: https://github.com/horbolsi/8x8-os-a-z (full A-Z deliverable)
