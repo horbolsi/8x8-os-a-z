@@ -1,0 +1,69 @@
+🔥 8x8 OS — THE SOVEREIGN AI OPERATING SYSTEM 🔥
+From a single spark of agency to a self-improving civilization. This is the complete A→Z,
+told micro→macro: the Spark That Thinks · the Brain Without Walls · the Endless Council ·
+the Studio of Nine Tongues · the Mesh That Never Sleeps · the Guardian at the Gate ·
+a Civilization That Improves Itself.
+
+🌍 GLOBAL VISION: every sector, every topic, no exception — on Earth and beyond.
+🎬 9 languages with burned + synced subtitles (EN burned in; AR/FR/DE/IT/RU/ZH/ES/HI as YouTube CC).
+🔐 PROVENANCE RECEIPT: every source file is SHA-256 hashed and committed publicly — this film
+   is cryptographically tied to 8x8 OS and cannot be duplicated or stolen. 100% ©️8x8.
+
+📜 RECEIPT (verify any file's hash): https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/RECEIPT.json
+🎬 Video SHA-256: 97f6a471d3ba10fa9ed02bbacd1559e742adc4d5954c5552…
+
+────────────────────────────────
+📂 RELATED FILES (full backup, internally + GitHub):
+📄 Documents & Formats:
+• 8x8-os-AZ.1  (4 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/formats/8x8-os-AZ.1
+• 8x8-os-AZ.csv  (4 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/formats/8x8-os-AZ.csv
+• 8x8-os-AZ.html  (5 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/formats/8x8-os-AZ.html
+• 8x8-os-AZ.json  (5 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/formats/8x8-os-AZ.json
+• 8x8-os-AZ.md  (4 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/formats/8x8-os-AZ.md
+• 8x8-os-AZ.pdf  (4 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/formats/8x8-os-AZ.pdf
+• 8x8-os-AZ.rst  (4 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/formats/8x8-os-AZ.rst
+• 8x8-os-AZ.txt  (4 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/formats/8x8-os-AZ.txt
+• 8x8-os-AZ.yaml  (4 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/formats/8x8-os-AZ.yaml
+• MANIFEST.json  (0 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/public_docs/MANIFEST.json
+• README.md  (1 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/public_docs/README.md
+
+🔊 Voice tracks (EN narration + Global Vision):
+• vo_A.mp3  (96 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/media/vo_A.mp3
+• vo_B_00.mp3  (183 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/media/vo_B_00.mp3
+• vo_B_01.mp3  (133 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/media/vo_B_01.mp3
+• vo_B_02.mp3  (59 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/media/vo_B_02.mp3
+• vo_B_03.mp3  (75 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/media/vo_B_03.mp3
+• vo_B_04.mp3  (82 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/media/vo_B_04.mp3
+
+🌐 Subtitles (9 languages):
+• subs_en.srt  (1 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/media/subs_en.srt
+• subs_ar.srt  (0 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/media/subs_ar.srt
+• subs_fr.srt  (0 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/media/subs_fr.srt
+• subs_de.srt  (0 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/media/subs_de.srt
+• subs_it.srt  (0 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/media/subs_it.srt
+• subs_ru.srt  (0 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/media/subs_ru.srt
+• subs_zh.srt  (0 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/media/subs_zh.srt
+• subs_es.srt  (0 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/media/subs_es.srt
+• subs_hi.srt  (0 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/media/subs_hi.srt
+
+🖼️ Source hero art:
+• hero_core.jpg  (89 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/hero/hero_core.jpg
+• hero_cosmos.jpg  (63 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/hero/hero_cosmos.jpg
+• hero_data.jpg  (110 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/hero/hero_data.jpg
+• hero_mesh.jpg  (47 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/hero/hero_mesh.jpg
+• hero_vision.jpg  (66 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/hero/hero_vision.jpg
+
+⚙️ Source scripts:
+• 8x8_console.py  (9 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/8x8_console.py
+• content.py  (7 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/content.py
+• build_cinematic2.py  (15 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/build_cinematic2.py
+• generate_formats.py  (9 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/generate_formats.py
+• gen_public_docs.py  (6 KB)  https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/gen_public_docs.py
+
+────────────────────────────────
+🛡️ SIGNED & RECEIPTED: FlashTM8 ⚡️|©️8x8
+🤖 Produced by: HERMES 🧠|©️8x8
+©️ 2026 8x8 OS — All rights reserved. This work is signed and provenance-receipted;
+unauthorized duplication or re-upload without attribution is prohibited.
+
+#8x8OS #SovereignAI #AIOperatingSystem #ArtificialIntelligence #FutureTech #AI #AGI #AutonomousAgents

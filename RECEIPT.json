@@ -774,5 +774,6 @@
       "bytes": 7051
     }
   ],
-  "verify": "Download any file, compute SHA-256, and compare to this receipt. The video hash + this JSON are committed publicly at github.com/horbolsi/8x8-os-a-z/blob/main/RECEIPT.json"
+  "verify": "Download any file, compute SHA-256, and compare to this receipt. The video hash + this JSON are committed publicly at github.com/horbolsi/8x8-os-a-z/blob/main/RECEIPT.json",
+  "github_raw": "https://raw.githubusercontent.com/horbolsi/8x8-os-a-z/main/RECEIPT.json"
 }
