@@ -2,6 +2,8 @@
 
 **Public guidance / product map for the 8x8 All-in-One platform.**
 
+**Current public launch status:** [PRODUCT / COMMUNITY PRELAUNCH](PRELAUNCH.md) — the value-bearing 8x8 presale is not open until its separate legal, security, economic, identity, custody and production gates are proven.
+
 This repository explains what people can **use, build, connect to, contribute to, verify and participate in** across the 8x8 ecosystem. It is intentionally **not** a mirror of the private One-Fabric implementation.
 
 > **PUBLIC PRODUCT ≠ PRIVATE ONE-FABRIC SOURCE**
@@ -59,6 +61,7 @@ It demonstrates the public product model only. Demo fixtures are not live teleme
 
 ## Where to go next
 
+- **Public Prelaunch** — [current product/community launch status and participation guidance](PRELAUNCH.md).
 - **User Edition** — public/tenant product surface.
 - **8x8 Protocol** — intentionally public schemas, contracts and verification formats.
 - **A→Z** — this public guidance and capability map.
