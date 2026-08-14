@@ -1,0 +1,23 @@
+name: Validate Public Guidance Boundary
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile boundary validator
+        run: python3 -m py_compile scripts/validate_public_guidance_boundary.py
+      - name: Scan every tracked public artifact
+        run: python3 scripts/validate_public_guidance_boundary.py
