@@ -1,31 +1,29 @@
-# 8x8 OS 2026
-### The Sovereign AI Operating System — From a Single Spark to a Civilisation
+# ©️8x8 by FlashTM8 ⚡️🌎🤖 — A→Z Presentation Archive
 
-FlashTM8 ⚡️🌎🤖 | ©️8x8
+This public repository is a **presentation/media archive** for an earlier 8x8 A→Z story and cinematic release.
 
-> Not a chatbot. An **operating system for agency**: specialised agents that share
-> one brain, debate, self-improve, and act in the real world — trading, creating,
-> researching and publishing across every channel, 24/7, anonymously.
+It is not the private 8x8 implementation, control plane, runtime source, agent system, wallet/signing system or operational backup.
 
-## Why it matters
-Most AI waits to be asked. 8x8 OS acts. It begins as one autonomous unit and
-scales into a self-improving civilisation the owner can observe, guide and trust.
+## Public scope
 
-## What you get
-- A living **Brain** shared by every agent (no isolated silos)
-- **Debate & consensus** before any consequential action
-- A **Studio** that turns ideas into text, image, voice, video and music in 9 languages
-- **Autonomous trading** within strict, bounded risk
-- A **self-healing Mesh** across phones, servers, clouds and repositories
-- **Architectural safety**: bounded-autonomy gates, secret vault, anonymous by default
+The active public branch contains only approved presentation/media material intended for viewing and sharing.
 
-## Quick start
-```bash
-git clone https://github.com/horbolsi/8x8-os-a-z
-cd 8x8-os-a-z
-python3 8x8_console.py --demo
-```
-See [docs/](docs/) for the full guide.
+For current public 8x8 products and intentionally public integration contracts, use:
 
-_FlashTM8 ⚡️🌎🤖 | ©️8x8_  ·  Anonymous · Sovereign · Autonomous
-See also: https://github.com/horbolsi/8x8-os-a-z (full A-Z deliverable)
+- **8x8 User Edition:** https://github.com/8x8org/8x8-user-edition
+- **8x8 Protocol:** https://github.com/8x8org/8x8-protocol
+- **Public Fabric:** https://8x8-os-ecosystem.vercel.app
+
+## Historical notice
+
+Earlier revisions of this repository included generator/demo source, architecture documents, audits, receipts and multi-format exports. Those files are historical material and are no longer part of the approved active public presentation surface.
+
+Removing material from current `main` does not erase older Git history, forks or caches. The private canonical estate preserves the historical work for internal continuity.
+
+## Truth boundary
+
+The A→Z cinematic is a presentation artifact. Its narrative, imagery or historical source files do not prove that every depicted capability is currently deployed, live or production-authorized.
+
+Public users receive 8x8 products, tools and services through their approved public interfaces; this repository does not publish the proprietary machinery behind them.
+
+©️8x8 by FlashTM8 ⚡️🌎🤖
