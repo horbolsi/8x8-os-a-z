@@ -21,7 +21,16 @@ TEXT_PATTERNS = {
     "credential_token": re.compile(r"\b(?:gh[opsu]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9_-]{20,})\b"),
     "credential_assignment": re.compile(r"(?mi)^\s*(?:ADMIN_SECRET|TG_BOT_TOKEN|BITGET_SECRET_KEY|BITGET_PASSPHRASE|OPENROUTER_API_KEY|ELEVENLABS_API_KEY|FAL_KEY)\s*=\s*[^\s#]+"),
 }
-BYTE_PATTERNS = {k: re.compile(v.pattern.encode(), v.flags) for k, v in TEXT_PATTERNS.items() if k != "credential_assignment"}
+BYTE_PATTERNS = {
+    "private_root_path": re.compile(rb"/root/(?:8x8|trading_venv|\.hermes)", re.I),
+    "private_android_path": re.compile(rb"/data/data/com\.termux", re.I),
+    "private_runtime_dir": re.compile(rb"(?:^|[\\/])\.hermes(?:[\\/]|$)", re.I),
+    "private_db": re.compile(rb"\b(?:state|agent_brain|agent_bus|trades|telegram_intel|discord_intel)\.db\b", re.I),
+    "private_repo": re.compile(rb"\bhorbolsi/(?:8x8-os-june2026|8x8-memory|8x8-os-private|8x8-OS-unified)\b", re.I),
+    "protected_deploy_id": re.compile(rb"\bdpl_[A-Za-z0-9]{16,}\b"),
+    "private_key": re.compile(rb"BEGIN (?:RSA|OPENSSH|EC) PRIVATE KEY"),
+    "credential_token": re.compile(rb"\b(?:gh[opsu]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9_-]{20,})\b"),
+}
 
 
 def tracked() -> list[Path]:
