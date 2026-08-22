@@ -4,6 +4,10 @@
 
 **Current public launch status:** [PRODUCT / COMMUNITY PRELAUNCH](PRELAUNCH.md) — the value-bearing 8x8 presale is not open until its separate legal, security, economic, identity, custody and production gates are proven.
 
+**Current product/interface truth:** https://github.com/8x8org/.github/blob/main/CURRENT_PUBLIC_STATE.md
+
+> The ASCII console in this repository is a **safe public demo**, not the current full user interface. The preserved `horbolsi/8x8-OS-Ecosystem` 22-module React hub is likewise a historical public donor, not the current total feature denominator. The canonical public User Edition is `8x8org/8x8-user-edition`; richer protected browser/PWA, Telegram and installed-client states remain separately evidence-gated.
+
 This repository explains what people can **use, build, connect to, contribute to, verify and participate in** across the 8x8 ecosystem. It is intentionally **not** a mirror of the private One-Fabric implementation.
 
 > **PUBLIC PRODUCT ≠ PRIVATE ONE-FABRIC SOURCE**
@@ -28,6 +32,15 @@ The public 8x8 experience is designed as an All-in-One platform spanning and int
 - **Governance / Contributions** — proposals, voting, community submissions, public decisions and future reward eligibility under separately ratified policy.
 - **Transparency / Benchmarks / Evidence** — public receipts, treasury/liquidity/fee/subscription flows, network/proof metrics, benchmarks and evidence-bound status.
 - **Nodes / Proof Fabric** — opt-in user devices/resources may participate through role-scoped node leases and verifiable receipts as supported.
+- **Nearby / Missions / Partner Rewards** — opt-in discovery of verified partners and evidence-backed tasks, points and reward entitlements as separately released; entitlement does not itself mean token distribution or outgoing payment.
+
+## Current interface direction
+
+The public-safe current interface direction is a responsive spatial cockpit organized around:
+
+`HOME / WORLD / AGENTS / STUDIO / MARKET / CHAIN / PROOF`
+
+The protected user release train progressively combines identity, Studio, agents/presence, wallet/chain, connectors, proof/evidence and user workflows into the same browser-origin client. Browser/PWA acceptance comes before Telegram Mini App promotion, and installed Android/APK release requires its own build/signature/acceptance evidence.
 
 ## Proof + node participation
 
@@ -49,7 +62,7 @@ Transparency does **not** publish private signing keys, custody secrets, custome
 
 ## Public Terminal demo
 
-The included terminal is a **public-safe product demonstration**, not the private owner shell:
+The included terminal is a **public-safe product demonstration**, not the private owner shell and not the complete current UI:
 
 ```bash
 git clone https://github.com/horbolsi/8x8-os-a-z
@@ -61,9 +74,10 @@ It demonstrates the public product model only. Demo fixtures are not live teleme
 
 ## Where to go next
 
+- **Current Public State** — [evidence-bound current product/interface checkpoint](https://github.com/8x8org/.github/blob/main/CURRENT_PUBLIC_STATE.md).
 - **Public Prelaunch** — [current product/community launch status and participation guidance](PRELAUNCH.md).
-- **User Edition** — public/tenant product surface.
-- **8x8 Protocol** — intentionally public schemas, contracts and verification formats.
+- **User Edition** — [canonical public/tenant product source](https://github.com/8x8org/8x8-user-edition).
+- **8x8 Protocol** — [intentionally public schemas, contracts and verification formats](https://github.com/8x8org/8x8-protocol).
 - **A→Z** — this public guidance and capability map.
 - **Private One Fabric** — proprietary implementation and OWNER_ROOT control plane; not published here.
 
